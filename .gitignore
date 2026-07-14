@@ -1,0 +1,6 @@
+__pycache__/
+.ipynb_checkpoints/
+out/
+*.pyc
+*.h5
+model_data/variables/
