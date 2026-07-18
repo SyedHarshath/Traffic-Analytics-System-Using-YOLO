@@ -18,9 +18,8 @@ import tensorflow as tf
 from tensorflow.python.framework.ops import EagerTensor
 from tensorflow.keras.models import load_model
 from yad2k.models.keras_yolo import yolo_head
-get_ipython().run_line_magic('matplotlib', 'inline')
-
-
+from download_model import download_model
+import streamlit as st
 # In[17]:
 
 
@@ -271,11 +270,18 @@ model_image_size = (608,608)
 
 
 # In[31]:
+@st.cache_resource
+def load_yolo_model():
+    MODEL_DIR = download_model()
+    print("MODEL_DIR =", MODEL_DIR)
 
+    model = load_model(MODEL_DIR, compile=False)
 
-yolo_model = load_model("model_data",compile=False)
+    print("Model Loaded Successfully")
 
+    return model
 
+yolo_model = load_yolo_model()
 # In[32]:
 
 

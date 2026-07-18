@@ -4,3 +4,4 @@ out/
 *.pyc
 *.h5
 model_data/variables/
+model_data/yolo.h5
