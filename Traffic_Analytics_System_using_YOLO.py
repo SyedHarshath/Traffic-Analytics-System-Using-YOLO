@@ -273,8 +273,26 @@ model_image_size = (608,608)
 @st.cache_resource
 def load_yolo_model():
     MODEL_DIR = download_model()
-    print("MODEL_DIR =", MODEL_DIR)
+    print("MODEL_DIR:", MODEL_DIR)
 
+    print("saved_model exists:", os.path.exists(os.path.join(MODEL_DIR, "saved_model.pb")))
+    print("variables.index exists:", os.path.exists(os.path.join(MODEL_DIR, "variables", "variables.index")))
+    print(
+        "variables.data exists:",
+        os.path.exists(
+            os.path.join(
+                MODEL_DIR,
+                "variables",
+                "variables.data-00000-of-00001",
+            )
+        ),
+    )
+    print("MODEL_DIR:", os.path.abspath(MODEL_DIR))
+
+    for root, dirs, files in os.walk(MODEL_DIR):
+        print(root)
+        for f in files:
+            print("   ", f)
     model = load_model(MODEL_DIR, compile=False)
 
     print("Model Loaded Successfully")
