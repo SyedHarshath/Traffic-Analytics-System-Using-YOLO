@@ -104,7 +104,7 @@ out/modern_city-op.webp
 
 🌐 **Streamlit App**
 
-> https://your-streamlit-app.streamlit.app
+> https://traffic-analytics-system-using-yolo.streamlit.app/
 
 ---
 
