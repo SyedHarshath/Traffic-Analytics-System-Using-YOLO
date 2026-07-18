@@ -100,13 +100,6 @@ out/modern_city-op.webp
 ```
 
 
-# 🚀 Live Demo
-
-🌐 **Streamlit App**
-
-> https://traffic-analytics-system-using-yolo.streamlit.app/
-
----
 
 # 🤗 Model
 
